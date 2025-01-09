@@ -1229,7 +1229,7 @@ _Appears in:_
 
 _Underlying type:_ _string_
 
-StrategyType describes strategy to use to reprovision existing DPUs.
+StrategyType describes the strategy to use to reprovision existing DPUs.
 Default is "Recreate".
 
 _Validation:_
@@ -1681,7 +1681,7 @@ _Appears in:_
 | `serviceAccount` _[NamespacedName](#namespacedname)_ | ServiceAccount defines the needed information to create the service account. |  |  |
 | `duration` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.31/#duration-v1-meta)_ | Duration is the duration for which the token will be valid.<br />Value must be in units accepted by Go time.ParseDuration https://golang.org/pkg/time/#ParseDuration.<br />e.g. "1h", "1m", "1s", "1ms", "1.5h", "2h45m".<br />Value duration must not be less than 10 minutes.<br />**Note:** The maximum TTL for a token is 24 hours, after which the token<br />will be rotated. |  | Pattern: `^([0-9]+(\.[0-9]+)?(ms\|s\|m\|h))+$` <br />Type: string <br /> |
 | `targetCluster` _[NamespacedName](#namespacedname)_ | TargetCluster defines the target cluster where the service account will<br />be created, and where a token for that service account will be requested.<br />If not provided, the token will be requested for the same cluster where<br />the DPUServiceCredentialRequest object is created. |  |  |
-| `type` _string_ | Type is the type of the secret that will be created.<br />The supported types are `kubeconfig` and `tokenFile`.<br />If `kubeconfig` is selected, the secret will contain a kubeconfig file,<br />that can be used to access the cluster.<br />If `tokenFile` is selected, the secret will contain a token file and serveral<br />environment variables that can be used to access the cluster. It can be used<br />with https://github.com/kubernetes/client-go/blob/v11.0.0/rest/config.go#L52<br />to create a client that will hanle file rotation. |  | Enum: [kubeconfig tokenFile] <br /> |
+| `type` _string_ | Type is the type of the secret that will be created.<br />The supported types are `kubeconfig` and `tokenFile`.<br />If `kubeconfig` is selected, the secret will contain a kubeconfig file,<br />that can be used to access the cluster.<br />If `tokenFile` is selected, the secret will contain a token file and serveral<br />environment variables that can be used to access the cluster. It can be used<br />with https://github.com/kubernetes/client-go/blob/v11.0.0/rest/config.go#L52<br />to create a client that will handle file rotation. |  | Enum: [kubeconfig tokenFile] <br /> |
 | `secret` _[NamespacedName](#namespacedname)_ | Secret defines the needed information to create the secret.<br />The secret will be of the type specified in the `spec.type` field. |  |  |
 | `metadata` _[ObjectMeta](#objectmeta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
 
@@ -1759,7 +1759,7 @@ _Appears in:_
 | Field | Description | Default | Validation |
 | --- | --- | --- | --- |
 | `metadata` _[ObjectMeta](#objectmeta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
-| `ipv4Network` _[IPV4Network](#ipv4network)_ | IPV4Network is the configuration related to splitting a network into subnets per node, each with their own gateway. |  |  |
+| `ipv4Network` _[IPV4Network](#ipv4network)_ | IPV4Network is the configuration related to splitting a network into subnets per node, each with its own gateway. |  |  |
 | `ipv4Subnet` _[IPV4Subnet](#ipv4subnet)_ | IPV4Subnet is the configuration related to splitting a subnet into blocks per node. In this setup, there is a<br />single gateway. |  |  |
 | `clusterSelector` _[LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.31/#labelselector-v1-meta)_ | ClusterSelector determines in which clusters the DPUServiceIPAM controller should apply the configuration. |  |  |
 | `nodeSelector` _[NodeSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.31/#nodeselector-v1-core)_ | NodeSelector determines in which DPU nodes the DPUServiceIPAM controller should apply the configuration. |  |  |
@@ -2441,7 +2441,7 @@ _Appears in:_
 
 
 
-ServiceDef Identifes the service and network for the ServiceInterface
+ServiceDef identifies the service and network for the ServiceInterface
 
 
 
